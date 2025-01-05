@@ -110,13 +110,9 @@ app.delete("/api/v1/delete/:id", async (req, res) => {
   });
 });
 app.listen(8080, () => {
-  mongoose
-    .connect(
-      "mongodb+srv://dbUser:vnIlzcm0ZyuI44sn@cluster0.lbx3y.mongodb.net/test"
-    )
-    .then(() => {
-      console.log("connected to DB");
-    });
+  mongoose.connect(process.env.MONGO_URL).then(() => {
+    console.log("connected to DB");
+  });
 
   console.log("server connected to port 8080");
 });
