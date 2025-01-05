@@ -1,4 +1,4 @@
-import e from "express";
+import express from "express";
 import {
   S3Client,
   PutObjectCommand,
@@ -13,7 +13,7 @@ import mongoose from "mongoose";
 import { bucket } from "./models/imageModel.js";
 import crypto from "crypto";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-const app = e();
+const app = express();
 dotenv.config();
 
 const storage = multer.memoryStorage();
